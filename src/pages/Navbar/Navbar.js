@@ -26,25 +26,25 @@ const Navbar = () => {
             class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52"
           >
             <li>
-              <a>Item 1</a>
+              <a>Completed Tasks</a>
             </li>
             <li tabindex="0">
-              <a class="justify-between">Item 2</a>
+              <a class="justify-between">To Do</a>
             </li>
             <li>
-              <a>Item 3</a>
+              <a>Calendar</a>
             </li>
           </ul>
         </div>
-        <a class="btn btn-ghost normal-case text-xl">Google Task App</a>
+        <a class="btn btn-ghost normal-case text-xl">Google Tasks App</a>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal p-0">
           <li>
-            <a>Item 1</a>
+            <a>Home</a>
           </li>
           <li tabindex="0">
-           <a>Item 2</a>
+           <a>To Do</a>
           </li>
           <li>
             <a>Item 3</a>
