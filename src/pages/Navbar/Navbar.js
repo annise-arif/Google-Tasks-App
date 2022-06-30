@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <header class="navbar bg-primary text-white">
-      <div class="navbar-start">
+    <header class="navbar bg-base-300 text-black">
+      <div class="navbar-start container">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
             <svg
@@ -26,33 +27,36 @@ const Navbar = () => {
             class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52"
           >
             <li>
-              <a>Completed Tasks</a>
-            </li>
-            <li tabindex="0">
-              <a class="justify-between">To Do</a>
+              <Link to="/home">Home</Link>
             </li>
             <li>
-              <a>Calendar</a>
+              <Link to="/completedtask">Completed Tasks</Link>
+            </li>
+            <li tabindex="0">
+              <Link to="/todo">To Do</Link>
+            </li>
+            <li>
+              <Link to="/calendar">Calendar</Link>
             </li>
           </ul>
         </div>
         <a class="btn btn-ghost normal-case text-xl">Google Tasks App</a>
       </div>
-      <div class="navbar-center hidden lg:flex">
+      <div class="navbar-end hidden lg:flex">
         <ul class="menu menu-horizontal p-0">
           <li>
-            <a>Home</a>
-          </li>
-          <li tabindex="0">
-           <a>To Do</a>
+          <Link to="/home">Home</Link>
           </li>
           <li>
-            <a>Item 3</a>
+          <Link to="/completedtask">Completed Tasks</Link>
+          </li>
+          <li tabindex="0">
+          <Link to="/todo">To Do</Link>
+          </li>
+          <li>
+          <Link to="/calendar">Calendar</Link>
           </li>
         </ul>
-      </div>
-      <div class="navbar-end">
-        <a class="btn">Get started</a>
       </div>
     </header>
   );
