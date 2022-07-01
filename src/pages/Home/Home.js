@@ -50,6 +50,7 @@ const Home = () => {
               type="text"
               placeholder="Type here"
               class="input input-bordered input-base-300 w-full max-w-xs"
+              autoComplete="off"
             />
             <input
               class="btn btn-base-300 btn-sm mt-5"

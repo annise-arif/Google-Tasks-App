@@ -12,7 +12,7 @@ const Todo = () => {
   const completedTodo = (todo) => {
     console.log(todo);
     const Todo = {
-      todo,
+      todo: todo.todo,
     };
 
     fetch("https://honest-donair-81274.herokuapp.com/CompletedTodo", {
@@ -25,14 +25,20 @@ const Todo = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        {
-          todolist.map((stodo) => console.log(stodo));
-        }
+        fetch(`http://localhost:5000/todo/${todo._id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
+
       });
+
   };
 
   const handleEdit = (todo) =>{
-    console.log(todo.todo, todo._id)
+    console.log(todo.todo, todo._id);
   }
   return (
     <div className="todo-list mt-5">
@@ -44,7 +50,7 @@ const Todo = () => {
           {todolist.map((todo) => (
             <p className="content-center flex">
               <input
-                onClick={() => completedTodo(todo.todo)}
+                onClick={() => completedTodo(todo)}
                 type="checkbox"
                 checked="checked"
                 class="checkbox checkbox-sm"
