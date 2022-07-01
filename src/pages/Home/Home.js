@@ -16,7 +16,11 @@ const Home = () => {
     const Todo = {
       todo,
     };
-    fetch("https://honest-donair-81274.herokuapp.com/todo", {
+    if(todo === ""){
+      return;
+    }
+    else{
+      fetch("https://honest-donair-81274.herokuapp.com/todo", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -32,6 +36,7 @@ const Home = () => {
           toast.error(`adding error To-Do`);
         }
       });
+    }
     event.target.reset();
   };
   return (
