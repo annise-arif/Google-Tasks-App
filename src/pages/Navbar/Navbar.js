@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <header class="navbar bg-base-300 text-black">
-      <div class="navbar-start container">
+      <div class="navbar-start">
         <div class="dropdown">
-          <label tabindex="0" class="btn btn-ghost lg:hidden">
+          <label tabIndex="0" class="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -23,17 +23,17 @@ const Navbar = () => {
             </svg>
           </label>
           <ul
-            tabindex="0"
+            tabIndex="0"
             class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52"
           >
             <li>
               <Link to="/home">Home</Link>
             </li>
             <li>
-              <Link to="/completedtask">Completed Tasks</Link>
-            </li>
-            <li tabindex="0">
               <Link to="/todo">To Do</Link>
+            </li>
+            <li tabIndex="0">
+              <Link to="/completedtask">Completed Tasks</Link>
             </li>
             <li>
               <Link to="/calendar">Calendar</Link>
@@ -48,10 +48,10 @@ const Navbar = () => {
           <Link to="/home">Home</Link>
           </li>
           <li>
-          <Link to="/completedtask">Completed Tasks</Link>
-          </li>
-          <li tabindex="0">
           <Link to="/todo">To Do</Link>
+          </li>
+          <li tabIndex="0">
+          <Link to="/completedtask">Completed Tasks</Link>
           </li>
           <li>
           <Link to="/calendar">Calendar</Link>

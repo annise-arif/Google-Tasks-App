@@ -4,11 +4,11 @@ import { toast } from "react-toastify";
 const Home = () => {
   const [todolist, setTodolist] = useState([]);
 
-  useEffect(()=>{
-    fetch("http://localhost:5000/todo")
-    .then((res) => res.json())
-    .then((data) => setTodolist(data));
-  }, []);
+  useEffect(() => {
+    fetch("https://honest-donair-81274.herokuapp.com/todo")
+      .then((res) => res.json())
+      .then((data) => setTodolist(data));
+  }, [todolist]);
 
   const handleTodo = (event) => {
     event.preventDefault();
@@ -16,7 +16,7 @@ const Home = () => {
     const Todo = {
       todo,
     };
-    fetch("http://localhost:5000/todo", {
+    fetch("https://honest-donair-81274.herokuapp.com/todo", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -58,8 +58,17 @@ const Home = () => {
       <div className="todo-list mt-5">
         <div class="card lg:w-96 mx-auto">
           <div class="card-body">
-            <h2 class="card-title justify-center text-black mb-2 font-bold">TO-DO LISTS</h2>
-            {todolist.map(todo=><p className="p-2 bg-slate-200 text-start rounded-md" key={todo._id}>{todo.todo}</p>)}
+            <h2 class="card-title justify-center text-black mb-2 font-bold">
+              TO-DO LISTS
+            </h2>
+            {todolist.map((todo) => (
+              <p
+                className="p-2 bg-slate-200 text-start rounded-md"
+                key={todo._id}
+              >
+                {todo.todo}
+              </p>
+            ))}
           </div>
         </div>
       </div>
