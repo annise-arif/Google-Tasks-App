@@ -30,6 +30,10 @@ const Todo = () => {
         }
       });
   };
+
+  const handleEdit = (todo) =>{
+    console.log(todo.todo, todo._id)
+  }
   return (
     <div className="todo-list mt-5">
       <div class="card lg:w-96 mx-auto">
@@ -50,7 +54,7 @@ const Todo = () => {
                 value={todo.todo}
                 class="input input-bordered input-sm w-full max-w-xs mx-3"
               />
-              <button className="btn btn-xs">Edit</button>
+              <button onClick={()=>handleEdit(todo)} className="btn btn-xs">Edit</button>
             </p>
           ))}
         </div>
