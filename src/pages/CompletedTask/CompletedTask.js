@@ -11,9 +11,9 @@ const CompletedTask = () => {
   return (
     <div>
       <div className="todo-list my-5 pb-9">
-        <div class="card lg:w-96 mx-auto">
-          <div class="card-body">
-            <h2 class="card-title justify-center text-black mb-2 font-bold">
+        <div className="card lg:w-96 mx-auto">
+          <div className="card-body">
+            <h2 className="card-title justify-center text-black mb-2 font-bold">
               Completed To-Do
             </h2>
             {ctodo.map((todo) => (

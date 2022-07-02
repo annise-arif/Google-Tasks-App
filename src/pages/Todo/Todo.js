@@ -32,19 +32,17 @@ const Todo = () => {
           .then((data) => {
             console.log(data);
           });
-
       });
-
   };
 
-  const handleEdit = (todo) =>{
+  const handleEdit = (todo) => {
     console.log(todo.todo, todo._id);
-  }
+  };
   return (
     <div className="todo-list mt-5">
-      <div class="card lg:w-96 mx-auto">
-        <div class="card-body">
-          <h2 class="card-title justify-center text-black mb-2 text-2xl font-bold mb-5">
+      <div className="card lg:w-96 mx-auto">
+        <div className="card-body">
+          <h2 className="card-title justify-center text-black mb-2 text-2xl font-bold mb-5">
             TO-DO LISTS
           </h2>
           {todolist.map((todo) => (
@@ -53,14 +51,16 @@ const Todo = () => {
                 onClick={() => completedTodo(todo)}
                 type="checkbox"
                 checked="checked"
-                class="checkbox checkbox-sm"
+                className="checkbox checkbox-sm"
               />
               <input
                 type="text"
                 value={todo.todo}
-                class="input input-bordered input-sm w-full max-w-xs mx-3"
+                className="input input-bordered input-sm w-full max-w-xs mx-3"
               />
-              <button onClick={()=>handleEdit(todo)} className="btn btn-xs">Edit</button>
+              <button onClick={() => handleEdit(todo)} className="btn btn-xs">
+                Edit
+              </button>
             </p>
           ))}
         </div>

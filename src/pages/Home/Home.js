@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 const Home = () => {
   const [todolist, setTodolist] = useState([]);
@@ -16,44 +16,43 @@ const Home = () => {
     const Todo = {
       todo,
     };
-    if(todo === ""){
+    if (todo === "") {
       return;
-    }
-    else{
+    } else {
       fetch("https://honest-donair-81274.herokuapp.com/todo", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(Todo),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          toast(`Completed adding TO-DO`);
-        } else {
-          toast.error(`adding error To-Do`);
-        }
-      });
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(Todo),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          // if (data.insertedId) {
+          //   toast(`Completed adding TO-DO`);
+          // } else {
+          //   toast.error(`adding error To-Do`);
+          // }
+        });
     }
     event.target.reset();
   };
   return (
     <div>
-      <div class="card w-96 bg-base-100 shadow-xl mx-auto">
-        <div class="card-body">
-          <h2 class="card-title justify-center">Add a To do list</h2>
+      <div className="card w-96 bg-base-100 shadow-xl mx-auto">
+        <div className="card-body">
+          <h2 className="card-title justify-center">Add a To do list</h2>
           <form onSubmit={handleTodo}>
             <input
               name="todo"
               type="text"
               placeholder="Type here"
-              class="input input-bordered input-base-300 w-full max-w-xs"
+              className="input input-bordered input-base-300 w-full max-w-xs"
               autoComplete="off"
             />
             <input
-              class="btn btn-base-300 btn-sm mt-5"
+              className="btn btn-base-300 btn-sm mt-5"
               type="submit"
               value="Add Task"
             />
@@ -62,9 +61,9 @@ const Home = () => {
       </div>
 
       <div className="todo-list mt-5">
-        <div class="card lg:w-96 mx-auto">
-          <div class="card-body">
-            <h2 class="card-title justify-center text-black mb-2 font-bold">
+        <div className="card lg:w-96 mx-auto">
+          <div className="card-body">
+            <h2 className="card-title justify-center text-black mb-2 font-bold">
               TO-DO LISTS
             </h2>
             {todolist.map((todo) => (
