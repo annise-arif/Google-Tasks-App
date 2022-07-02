@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const Todo = () => {
   const [todolist, setTodolist] = useState([]);
+  const [text, setText] = useState("");
 
   useEffect(() => {
     fetch("https://honest-donair-81274.herokuapp.com/todo")
@@ -25,7 +26,7 @@ const Todo = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        fetch(`http://localhost:5000/todo/${todo._id}`, {
+        fetch(`https://honest-donair-81274.herokuapp.com/todo/${todo._id}`, {
           method: "DELETE",
         })
         .then((res) => res.json())
@@ -36,7 +37,8 @@ const Todo = () => {
   };
 
   const handleEdit = (todo) => {
-    console.log(todo.todo, todo._id);
+    setText(todo);
+    console.log(text);
   };
   return (
     <div className="todo-list mt-5">
@@ -46,6 +48,7 @@ const Todo = () => {
             TO-DO LISTS
           </h2><hr />
           <div className="mt-4">
+
           {todolist.map((todo) => (
             <p className="content-center flex mt-3">
               <input
@@ -64,6 +67,7 @@ const Todo = () => {
               </button>
             </p>
           ))}
+          
           </div>
         </div>
       </div>
