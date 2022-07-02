@@ -44,7 +44,7 @@ const Todo = () => {
         <div className="card-body">
           <h2 className="card-title justify-center text-black mb-2 text-2xl font-bold mb-5">
             TO-DO LISTS
-          </h2>
+          </h2><hr />
           {todolist.map((todo) => (
             <p className="content-center flex">
               <input

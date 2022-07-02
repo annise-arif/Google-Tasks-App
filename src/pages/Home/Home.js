@@ -42,7 +42,7 @@ const Home = () => {
     <div>
       <div className="card w-96 bg-base-100 shadow-xl mx-auto">
         <div className="card-body">
-          <h2 className="card-title justify-center">Add a To do list</h2>
+          <h2 className="card-title justify-center">Add a To do list</h2><hr />
           <form onSubmit={handleTodo}>
             <input
               name="todo"

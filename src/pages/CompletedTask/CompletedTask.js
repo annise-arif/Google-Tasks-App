@@ -15,7 +15,7 @@ const CompletedTask = () => {
           <div className="card-body">
             <h2 className="card-title justify-center text-black mb-2 font-bold">
               Completed To-Do
-            </h2>
+            </h2><hr />
             {ctodo.map((todo) => (
               <p
                 className="p-2 bg-slate-200 text-start rounded-md"
