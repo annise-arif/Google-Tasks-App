@@ -28,8 +28,8 @@ const Todo = () => {
         fetch(`http://localhost:5000/todo/${todo._id}`, {
           method: "DELETE",
         })
-          .then((res) => res.json())
-          .then((data) => {
+        .then((res) => res.json())
+        .then((data) => {
             console.log(data);
           });
       });
@@ -45,24 +45,26 @@ const Todo = () => {
           <h2 className="card-title justify-center text-black mb-2 text-2xl font-bold mb-5">
             TO-DO LISTS
           </h2><hr />
+          <div className="mt-4">
           {todolist.map((todo) => (
-            <p className="content-center flex">
+            <p className="content-center flex mt-3">
               <input
                 onClick={() => completedTodo(todo)}
                 type="checkbox"
                 checked="checked"
-                className="checkbox checkbox-sm"
+                className="checkbox checkbox-sm mt-1"
               />
               <input
                 type="text"
                 value={todo.todo}
                 className="input input-bordered input-sm w-full max-w-xs mx-3"
               />
-              <button onClick={() => handleEdit(todo)} className="btn btn-xs">
+              <button onClick={() => handleEdit(todo)} className="mt-1 btn btn-xs">
                 Edit
               </button>
             </p>
           ))}
+          </div>
         </div>
       </div>
     </div>

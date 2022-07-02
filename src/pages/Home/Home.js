@@ -42,7 +42,7 @@ const Home = () => {
     <div>
       <div className="card w-96 bg-base-100 shadow-xl mx-auto">
         <div className="card-body">
-          <h2 className="card-title justify-center">Add a To do list</h2><hr />
+          <h2 className="card-title justify-center">Add a To do list</h2>
           <form onSubmit={handleTodo}>
             <input
               name="todo"
@@ -65,15 +65,17 @@ const Home = () => {
           <div className="card-body">
             <h2 className="card-title justify-center text-black mb-2 font-bold">
               TO-DO LISTS
-            </h2>
+            </h2><hr />
+            <div className="mt-3">
             {todolist.map((todo) => (
               <p
-                className="p-2 bg-slate-200 text-start rounded-md"
+                className="p-2 mb-3 bg-slate-200 text-start rounded-md"
                 key={todo._id}
               >
                 {todo.todo}
               </p>
             ))}
+            </div>
           </div>
         </div>
       </div>

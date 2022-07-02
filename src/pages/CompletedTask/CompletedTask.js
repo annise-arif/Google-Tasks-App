@@ -16,14 +16,16 @@ const CompletedTask = () => {
             <h2 className="card-title justify-center text-black mb-2 font-bold">
               Completed To-Do
             </h2><hr />
+            <div className="mt-4">
             {ctodo.map((todo) => (
               <p
-                className="p-2 bg-slate-200 text-start rounded-md"
+                className="p-2 bg-slate-200 text-start rounded-md mb-3"
                 key={todo._id}
               >
                 {todo.todo}
               </p>
             ))}
+            </div>
           </div>
         </div>
       </div>
