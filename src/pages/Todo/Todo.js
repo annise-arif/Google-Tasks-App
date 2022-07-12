@@ -98,7 +98,7 @@ const Todo = () => {
             <hr />
             {todolist.map((todo) => (
               <div>
-                <p className="content-center flex flex-col-reverse ... mt-6">
+                <p className="content-center flex mt-6">
                   <input
                     onClick={() => completedTodo(todo)}
                     type="checkbox"
