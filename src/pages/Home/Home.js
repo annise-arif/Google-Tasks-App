@@ -66,7 +66,7 @@ const Home = () => {
             <h2 className="card-title justify-center text-black mb-2 font-bold">
               TO-DO LISTS
             </h2><hr />
-            <div className="mt-3">
+            <div className="mt-3 mb-9">
             {todolist.map((todo) => (
               <p
                 className="p-2 mb-3 bg-slate-200 text-start rounded-md"
