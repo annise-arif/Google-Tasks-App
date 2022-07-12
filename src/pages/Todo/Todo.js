@@ -73,7 +73,7 @@ const Todo = () => {
             TO-DO LISTS
           </h2>
 
-          <div className="mt-4 mb-9">
+          <div className="mt-4">
             {todoId ? (
               <>
                 <h5 className="font-bold text-1xl">Edit</h5>
@@ -97,7 +97,7 @@ const Todo = () => {
             <h1>Latest</h1>
             <hr />
             {todolist.map((todo) => (
-              <div>
+              <div className="mb-9">
                 <p className="content-center flex mt-6">
                   <input
                     onClick={() => completedTodo(todo)}
