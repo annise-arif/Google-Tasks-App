@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 
 const CompletedTask = () => {
@@ -8,6 +9,18 @@ const CompletedTask = () => {
       .then((res) => res.json())
       .then((data) => setCtodo(data));
   }, [ctodo]);
+
+
+  const deleteTodo = (id) =>{
+    console.log(id);
+    fetch(`http://localhost:5000/allTodo/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
+  }
   return (
     <div>
       <div className="todo-list my-5 pb-9">
@@ -18,11 +31,20 @@ const CompletedTask = () => {
             </h2><hr />
             <div className="mt-4">
             {ctodo.map((todo) => (
-              <p
-                className="p-2 bg-slate-200 text-start rounded-md mb-3"
-                key={todo._id}
-              >
-                {todo.todo}
+              
+              <p className="content-center flex mt-3">
+               
+                <input
+                  type="text"
+                  value={todo.todo}
+                  className="input input-bordered input-sm w-full max-w-xs mx-3 bg-gray-200"
+                />
+                <button
+                  onClick={() => deleteTodo(todo._id)}
+                  className="mt-1 btn btn-xs bg-red-500"
+                >
+                  Delete
+                </button>
               </p>
             ))}
             </div>
